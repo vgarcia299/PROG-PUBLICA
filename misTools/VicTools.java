@@ -23,6 +23,10 @@ import java.nio.file.FileSystems;
  * {@linkplain #writerLoop(java.io.Writer) writerLoop(writer)}, 
  * {@linkplain #writerLoop(java.io.Writer, Scanner) writerLoop(writer, Scanner)}, 
  * {@linkplain #CopyAndFormatFile(String)}
+ * @apiNote
+ * IMPORTANTE:
+ * Siempre que en un método me refiera al nombre de un archivo de texto (ya sea para encontrarlo o para crearlo), 
+ * este ha de estar ubicado en el source folder asociado a la clase donde ejecutas dicho método.
  */
 public class VicTools {
 	
@@ -112,7 +116,6 @@ public class VicTools {
 	 * <br> - sin tildes
 	 * <br> - sin caracteres ascii no alfanumericos
 	 * @param originalFilename (String) nombre del archivo que tomaremos como referencia. Ejemplo: diccionario.txt
-	 * @apiNote el archivo ha de estar ubicado en el source folder asociado a la clase donde ejecutas este método.
 	 */
 	public static void CopyAndFormatFile(String originalFilename) {
 		try {
