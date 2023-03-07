@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.nio.file.FileSystems;
 
 /**
- * {@summary clase que contiene métodos estáticos que considero útiles y suelo usar.}
+ * {@summary clase que contiene métodos estáticos sueltos que considero útiles y suelo usar.}
  * @author victor
  * @methods
  * {@linkplain #getFilePath(String)},  
