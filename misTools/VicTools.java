@@ -2,8 +2,15 @@ package misTools;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.text.Normalizer;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 
@@ -43,7 +50,18 @@ public class VicTools {
 		
 		return allLines;
 	}
-	
+
+	/**
+	 * 
+	 * @param fileName (String) nombre del archivo. Ejemplo: diccionario.txt
+	 * @return String con el contenido de una linea aleatoria del archivo
+	 * @throws IOException
+	 */
+	public static String getRandomLine(String fileName) throws IOException {
+		List<String> all_Lines= Files.readAllLines(FileSystems.getDefault().getPath(fileName));
+		return all_Lines.get(new Random().nextInt(0, all_Lines.size()-1));	
+	}	
+		
 	/**
 	 * @author victor
 	 * mientras que el usuario no introduzca '!exit' el writer aceptara toda String que el usuario introduzca, 
@@ -81,6 +99,43 @@ public class VicTools {
 			else				
 				writer.write(line+"\n");		
 		} 
+	}
+	
+	/**
+	 * Toma un archivo de texto plano y crea una copia del mismo con un formato estándar.<br>
+	 * El nombre del nuevo archivo es: NombreArchivoOriginal_formatted.txt
+	 * <br>
+	 * <br> Defino como formato estándar:
+	 * <br> - en minúsculas
+	 * <br> - sin espacios en inicio o fin de línea
+	 * <br> - sin tildes
+	 * <br> - sin caracteres ascii no alfanumericos
+	 * @param originalFilename (String) nombre del archivo que tomaremos como referencia. Ejemplo: diccionario.txt
+	 * @apiNote el archivo ha de estar ubicado en el source folder asociado a la clase donde ejecutas este método.
+	 */
+	public static void CopyAndFormatFile(String originalFilename) {
+		try {
+			BufferedReader reader= new BufferedReader (new FileReader(originalFilename));
+			BufferedWriter writer= new BufferedWriter (new FileWriter(originalFilename+"_formatted.txt"));
+
+			for (int i=0; i<100; i++) 
+				writer.write (
+					Normalizer.normalize(
+					reader.readLine().toLowerCase().trim(), 
+					Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "")+"\n");			
+										
+			reader.close();
+			writer.close();
+			
+		} catch (FileNotFoundException omegaF) {
+			System.err.println("FileNotFound was caught");
+	//		omegaF.printStackTrace();
+			
+		} catch (IOException F) {
+			System.err.println("IOE was caught");
+	//		F.printStackTrace();
+		}
+
 	}
 	
 }
