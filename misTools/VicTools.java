@@ -20,8 +20,9 @@ import java.nio.file.FileSystems;
  * @methods
  * {@linkplain #getFilePath(String)},  
  * {@linkplain #getAllLines(String)},  
- * {@linkplain #writerLoop(java.io.Writer) writerLoop(writer)}
- * {@linkplain #writerLoop(java.io.Writer, Scanner) writerLoop(writer, Scanner)}
+ * {@linkplain #writerLoop(java.io.Writer) writerLoop(writer)}, 
+ * {@linkplain #writerLoop(java.io.Writer, Scanner) writerLoop(writer, Scanner)}, 
+ * {@linkplain #CopyAndFormatFile(String)}
  */
 public class VicTools {
 	
