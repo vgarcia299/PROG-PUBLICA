@@ -63,7 +63,7 @@ public class VicTools {
 	 * @throws IOException
 	 */
 	public static String getRandomLine(String fileName) throws IOException {
-		List<String> all_Lines= Files.readAllLines(FileSystems.getDefault().getPath(fileName));
+		List<String> all_Lines= Files.readAllLines(getFilePath(fileName));
 		return all_Lines.get(new Random().nextInt(0, all_Lines.size()-1));	
 	}	
 		
