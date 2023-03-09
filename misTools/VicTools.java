@@ -20,7 +20,7 @@ import java.nio.file.FileSystems;
  * {@linkplain #getAllLines(String)},  
  * {@linkplain #writerLoop(java.io.Writer) writerLoop(writer)}, 
  * {@linkplain #writerLoop(java.io.Writer, Scanner) writerLoop(writer, Scanner)}, 
- * {@linkplain #CopyAndFormatFile(String, boolean)}
+ * {@linkplain #CopyAndFormatFile(String)}
  * @apiNote
  * IMPORTANTE:
  * Siempre que en un método me refiera al nombre de un archivo de texto (ya sea para encontrarlo o para crearlo), 
@@ -55,7 +55,7 @@ public class VicTools {
 	}
 
 	/**
-	 * @author victor
+	 * 
 	 * @param fileName (String) nombre del archivo. Ejemplo: diccionario.txt
 	 * @return String con el contenido de una linea aleatoria del archivo
 	 * @throws IOException
@@ -117,25 +117,27 @@ public class VicTools {
 	 */
 	public static void CopyAndFormatFile(String originalFilename, boolean isUppercase) {
 		try {
+		
 			List<String> archivo= Files.readAllLines(getFilePath(originalFilename));
-			BufferedWriter writer= new BufferedWriter (new FileWriter(originalFilename+"_formatted.txt"));
+			BufferedWriter writer= new BufferedWriter(new FileWriter(originalFilename+"_formatted.txt"));
 
 			for (String line : archivo) 
-				writer.write(formatterAux(line, isUppercase)+"\n");
+				writer.write(formatterAuxiliary(line,isUppercase)+"\n");
 										
 			writer.close();
+			
 			
 		} catch (FileNotFoundException omegaF) {
 			System.err.println("FileNotFound was caught");
 	//		omegaF.printStackTrace();
 			
 		} catch (IOException F) {
-			System.err.println("IOE was caught");
+			System.err.println("IO was caught");
 	//		F.printStackTrace();
 		}
 
 		
-	} private static String formatterAux(String text, boolean uppercase) {
+	} private static String formatterAuxiliary(String text, boolean uppercase) {
 		if (uppercase)
 			return 	Normalizer.normalize(text.toUpperCase().trim(), 
 					Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
