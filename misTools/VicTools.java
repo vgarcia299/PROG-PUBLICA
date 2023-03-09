@@ -6,10 +6,8 @@ import java.text.Normalizer;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.FileSystems;
@@ -107,40 +105,43 @@ public class VicTools {
 	}
 	
 	/**
-	 * @author victor
 	 * Toma un archivo de texto plano y crea una copia del mismo con un formato estándar.<br>
 	 * El nombre del nuevo archivo es: NombreArchivoOriginal_formatted.txt
 	 * <br>
 	 * <br> Defino como formato estándar:
-	 * <br> - en minúsculas
 	 * <br> - sin espacios en inicio o fin de línea
-	 * <br> - sin tildes
+	 * <br> - sin tildes, diéresis, etc
 	 * <br> - sin caracteres ascii no alfanumericos
+	 * @param isUppercase (boolean) true si quieres que el resultado sea en mayusculas, false para minusuculas.
 	 * @param originalFilename (String) nombre del archivo que tomaremos como referencia. Ejemplo: diccionario.txt
 	 */
-	public static void CopyAndFormatFile(String originalFilename) {
+	public static void CopyAndFormatFile(String originalFilename, boolean isUppercase) {
 		try {
-			BufferedReader reader= new BufferedReader (new FileReader(originalFilename));
+			List<String> archivo= Files.readAllLines(getFilePath(originalFilename));
 			BufferedWriter writer= new BufferedWriter (new FileWriter(originalFilename+"_formatted.txt"));
 
-			for (int i=0; i<100; i++) 
-				writer.write (
-					Normalizer.normalize(
-					reader.readLine().toLowerCase().trim(), 
-					Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "")+"\n");			
+			for (String line : archivo) 
+				writer.write(formatterAux(line, isUppercase)+"\n");
 										
-			reader.close();
 			writer.close();
 			
-		} catch (FileNotFoundException F) {
+		} catch (FileNotFoundException omegaF) {
 			System.err.println("FileNotFound was caught");
-	//		F.printStackTrace();
-			
-		} catch (IOException omegaF) {
-			System.err.println("IOE was caught");
 	//		omegaF.printStackTrace();
+			
+		} catch (IOException F) {
+			System.err.println("IOE was caught");
+	//		F.printStackTrace();
 		}
 
+		
+	} private static String formatterAux(String text, boolean uppercase) {
+		if (uppercase)
+			return 	Normalizer.normalize(text.toUpperCase().trim(), 
+					Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+		else
+			return	Normalizer.normalize(text.toLowerCase().trim(), 
+					Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
 	}
 	
 }
