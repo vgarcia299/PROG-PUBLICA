@@ -20,7 +20,7 @@ import java.nio.file.FileSystems;
  * {@linkplain #getAllLines(String)},  
  * {@linkplain #writerLoop(java.io.Writer) writerLoop(writer)}, 
  * {@linkplain #writerLoop(java.io.Writer, Scanner) writerLoop(writer, Scanner)}, 
- * {@linkplain #CopyAndFormatFile(String)}
+ * {@linkplain #CopyAndFormatFile(String, boolean)}
  * @apiNote
  * IMPORTANTE:
  * Siempre que en un método me refiera al nombre de un archivo de texto (ya sea para encontrarlo o para crearlo), 
@@ -38,8 +38,8 @@ public class VicTools {
 	}
 
 	/**
-	 * @author victor
 	 * metodo con el que imprimimos el contenido de un archivo
+	 * @author victor
 	 * @param fileName (String) nombre del archivo que queremos imprimir<br>(ejemplo: nombreArchivo.txt)
 	 * @return una unica String con el contenido legible del archivo
 	 * @throws IOException
@@ -55,7 +55,7 @@ public class VicTools {
 	}
 
 	/**
-	 * 
+	 * @author victor
 	 * @param fileName (String) nombre del archivo. Ejemplo: diccionario.txt
 	 * @return String con el contenido de una linea aleatoria del archivo
 	 * @throws IOException
@@ -86,9 +86,9 @@ public class VicTools {
 	}
 	
 	/**
-	 * @author victor
 	 * mientras que el usuario no introduzca '!exit' el writer aceptara toda String que el usuario introduzca, 
 	 * añadiendo un salto de linea con cada input
+	 * @author victor
 	 * @param writer {@linkplain java.io.Writer Writer} que usaremos, incluye sus subclases (BufferedWriter, FileWriter, etc...)
 	 * @param scanner (Scanner) a utilizar
 	 * @throws IOException
@@ -105,7 +105,6 @@ public class VicTools {
 	}
 	
 	/**
-	 * @author victor
 	 * Toma un archivo de texto plano y crea una copia del mismo con un formato estándar.<br>
 	 * El nombre del nuevo archivo es: NombreArchivoOriginal_formatted.txt
 	 * <br>
@@ -113,6 +112,7 @@ public class VicTools {
 	 * <br> - sin espacios en inicio o fin de línea
 	 * <br> - sin tildes, diéresis, etc
 	 * <br> - sin caracteres ascii no alfanumericos
+	 * @author victor
 	 * @param isUppercase (boolean) true si quieres que el resultado sea en mayusculas, false para minusuculas.
 	 * @param originalFilename (String) nombre del archivo que tomaremos como referencia. Ejemplo: diccionario.txt
 	 */
