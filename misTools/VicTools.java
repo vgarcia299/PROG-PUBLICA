@@ -20,7 +20,7 @@ import java.nio.file.FileSystems;
  * {@linkplain #getAllLines(String)},  
  * {@linkplain #writerLoop(java.io.Writer) writerLoop(writer)}, 
  * {@linkplain #writerLoop(java.io.Writer, Scanner) writerLoop(writer, Scanner)}, 
- * {@linkplain #CopyAndFormatFile(String)}
+ * {@linkplain #CopyAndFormatFile(String, boolean)}
  * @apiNote
  * IMPORTANTE:
  * Siempre que en un método me refiera al nombre de un archivo de texto (ya sea para encontrarlo o para crearlo), 
