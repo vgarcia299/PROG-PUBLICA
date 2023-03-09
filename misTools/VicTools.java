@@ -105,6 +105,7 @@ public class VicTools {
 	}
 	
 	/**
+	 * @author victor
 	 * Toma un archivo de texto plano y crea una copia del mismo con un formato estándar.<br>
 	 * El nombre del nuevo archivo es: NombreArchivoOriginal_formatted.txt
 	 * <br>
