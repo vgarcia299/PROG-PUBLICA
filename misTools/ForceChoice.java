@@ -31,10 +31,10 @@ public class ForceChoice {
 			if (choice == forcedBoolean) 
 				return choice;	
 			else
-				throw new CheckedException();
+				throw new CustomException();
 									
-		} catch (CheckedException F) {
-			System.err.print("caught CheckedException... inténtalo de nuevo: ");
+		} catch (CustomException F) {
+			System.err.print("caught CustomException... inténtalo de nuevo: ");
 			return Boolean(scanner, forcedBoolean); 
 		}		
 	}
@@ -53,10 +53,10 @@ public class ForceChoice {
 				if (c==choice)
 					return choice;
 				
-			throw new CheckedException();
+			throw new CustomException();
 									
-		} catch (CheckedException F) {
-			System.err.print("caught CheckedException... inténtalo de nuevo: ");
+		} catch (CustomException F) {
+			System.err.print("caught CustomException... inténtalo de nuevo: ");
 			return Character(scanner, forcedChars); 
 		}		
 	}
@@ -81,10 +81,10 @@ public class ForceChoice {
 				if (choice.equals(str.toLowerCase()))
 					return choice;
 				
-			throw new CheckedException();
+			throw new CustomException();
 									
-		} catch (CheckedException F) {
-			System.err.print("caught CheckedException... inténtalo de nuevo: ");
+		} catch (CustomException F) {
+			System.err.print("caught CustomException... inténtalo de nuevo: ");
 			return String(scanner, forcedStr1, forcedStrs); 
 		}		
 	}
@@ -109,10 +109,10 @@ public class ForceChoice {
 				if (str.equals(choice))
 					return choice;
 				
-			throw new CheckedException();
+			throw new CustomException();
 									
-		} catch (CheckedException F) {
-			System.err.print("caught CheckedException... inténtalo de nuevo: ");
+		} catch (CustomException F) {
+			System.err.print("caught CustomException... inténtalo de nuevo: ");
 			return String_case_sensitive(scanner, forcedStr1, forcedStrs); 
 		}		
 	}
@@ -135,10 +135,10 @@ public class ForceChoice {
 				if (b==choice)
 					return choice;
 				
-			throw new CheckedException();
+			throw new CustomException();
 									
-		} catch (CheckedException F) {
-			System.err.print("caught CheckedException... inténtalo de nuevo: ");
+		} catch (CustomException F) {
+			System.err.print("caught CustomException... inténtalo de nuevo: ");
 			return Byte(scanner, forcedByte1, forcedBytes); 
 		}		
 	}
@@ -162,10 +162,10 @@ public class ForceChoice {
 				if (i==choice)
 					return choice;
 				
-			throw new CheckedException();
+			throw new CustomException();
 									
-		} catch (CheckedException F) {
-			System.err.print("caught CheckedException... inténtalo de nuevo: ");
+		} catch (CustomException F) {
+			System.err.print("caught CustomException... inténtalo de nuevo: ");
 			return Integer(scanner, forcedInt1, forcedInts); 
 		}		
 	}
@@ -188,10 +188,10 @@ public class ForceChoice {
 				if (d==choice)
 					return choice;
 				
-			throw new CheckedException();
+			throw new CustomException();
 									
-		} catch (CheckedException F) {
-			System.err.print("caught CheckedException... inténtalo de nuevo: ");
+		} catch (CustomException F) {
+			System.err.print("caught CustomException... inténtalo de nuevo: ");
 			return Double(scanner, forcedDouble1, forcedDoubles); 
 		}		
 	}
@@ -214,10 +214,10 @@ public class ForceChoice {
 				if (l==choice)
 					return choice;
 				
-			throw new CheckedException();
+			throw new CustomException();
 									
-		} catch (CheckedException F) {
-			System.err.print("caught CheckedException... inténtalo de nuevo: ");
+		} catch (CustomException F) {
+			System.err.print("caught CustomException... inténtalo de nuevo: ");
 			return Long(scanner, forcedLong1, forcedLongs); 
 		}		
 	}
@@ -240,10 +240,10 @@ public class ForceChoice {
 				if (f==choice)
 					return choice;
 				
-			throw new CheckedException();
+			throw new CustomException();
 									
-		} catch (CheckedException F) {
-			System.err.print("caught CheckedException... inténtalo de nuevo: ");
+		} catch (CustomException F) {
+			System.err.print("caught CustomException... inténtalo de nuevo: ");
 			return Float(scanner, forcedFloat, forcedFloats); 
 		}		
 	}
