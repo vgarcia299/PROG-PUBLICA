@@ -57,7 +57,7 @@ public class VicTools {
 	}
 
 	/**
-	 * 
+	 * @author victor
 	 * @param fileName (String) nombre del archivo. Ejemplo: diccionario.txt
 	 * @return String con el contenido de una linea aleatoria del archivo
 	 * @throws IOException
@@ -107,6 +107,7 @@ public class VicTools {
 	}
 	
 	/**
+	 * @author victor
 	 * Toma un archivo de texto plano y crea una copia del mismo con un formato estándar.<br>
 	 * El nombre del nuevo archivo es: NombreArchivoOriginal_formatted.txt
 	 * <br>
@@ -131,13 +132,13 @@ public class VicTools {
 			reader.close();
 			writer.close();
 			
-		} catch (FileNotFoundException omegaF) {
+		} catch (FileNotFoundException F) {
 			System.err.println("FileNotFound was caught");
-	//		omegaF.printStackTrace();
-			
-		} catch (IOException F) {
-			System.err.println("IOE was caught");
 	//		F.printStackTrace();
+			
+		} catch (IOException omegaF) {
+			System.err.println("IOE was caught");
+	//		omegaF.printStackTrace();
 		}
 
 	}
