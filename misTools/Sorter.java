@@ -6,7 +6,6 @@ package misTools;
  * @author victor
  * @methods
  * {@linkplain #quicksort(int[])}
- * {@linkplain #quicksort(List)}
  */
 public class Sorter {
 			
