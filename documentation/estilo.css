@@ -4,6 +4,15 @@ body{
     background-color: #3F3847;
 }
 
+#container{
+    margin-top: -10%;
+    text-align: right;
+}
+
+img {
+    width: 5%;
+}
+
 #clases{
     margin-top: -1%;
     font-size: larger;
@@ -32,16 +41,3 @@ a {
     color: inherit;
 }
 
-.hide {
-    display: none;
-  }
-  
-  .myDIV:hover + .hide {
-    display: block;
-    color: red;
-  }
-
-.test:hover + .hide {
-    display: block;
-    color: blue;
-}
