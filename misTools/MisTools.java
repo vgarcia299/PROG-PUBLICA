@@ -1,105 +1,105 @@
 package misTools;
 
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.text.Normalizer;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.FileSystems;
 
 /**
  * {@summary clase que contiene métodos estáticos que considero útiles y suelo usar.}
  * @author victor
  * @methods
- * {@linkplain #getFilePath(String)},  
- * {@linkplain #getAllLines(String)},  
+ * {@linkplain #getFile(String, String...)}, 
+ * {@linkplain #getAllLines(File)},  
  * {@linkplain #writerLoop(java.io.Writer) writerLoop(writer)}, 
  * {@linkplain #writerLoop(java.io.Writer, Scanner) writerLoop(writer, Scanner)}, 
- * {@linkplain #CopyAndFormatFile(String, boolean)}
+ * {@linkplain #CopyAndFormatFile(File, boolean)}
  * @apiNote
- * IMPORTANTE:
- * Siempre que en un método me refiera al nombre de un archivo de texto (ya sea para encontrarlo o para crearlo), 
- * este ha de estar ubicado en el source folder asociado a la clase donde ejecutas dicho método.
  */
 public class MisTools {
-	
-	/*
-	 * NOTA:readAllLines(fileName) puede ser sustituido por estas opciones en cualquier sitio que implemente ese método.
-	 * 	a) Files.readAllLines(MisTools.getFilePath(fileName))
-	 *  b) Files.readAllLines(FileSystems.getDefault().getPath(fileName))
-	 */
-	
+
 	/**
 	 * @author victor
-	 * @param fileName (String) el nombre del archivo al que nos queremos referir <br>(ejemplo: nombreArchivo.txt) 
-	 * @return Path del archivo correspondiente
+	 * @param fileName (String) nombre del archivo
+	 * @param folderNames (String) nombre de cada carpeta.<br>Ejemplo: MisTools.getFile("nombre.txt", "Desktop")
+	 * @return (File) acorde con la direccion y nombre correspondiente
 	 */
-	public static Path getFilePath(String fileName) {
-		return FileSystems.getDefault().getPath(fileName);
+	public static File getFile(String fileName, String...folderNames) 
+	{
+	    String path= System.getProperty("user.home");
+	    for (String folderName : folderNames)
+	    	path += "\\"+folderName+"\\";
+	    
+	    File archivo= new File(path+fileName);
+	    if (archivo.exists())
+	    	return archivo;
+	    else
+	    	throw new RuntimeException("no existe el archivo "+archivo);
 	}
 
 	/**
 	 * {@summary con este metodo evitamos tener que declarar un throws IO cada vez que vamos a usar Files.readAllLines()}
 	 * creo que es la mierda + sin sentido que he programado, todo para evitar declarar un throws
 	 * @author victor
-	 * @throws {@link misTools.CleanException}
-	 * @param fileName (String) nombre del archivo a buscar 
-	 * (ha de estar ubicado en el source folder de la clase donde ejecutas este método)
+	 * @throws {@link java.lang.RunTimeException}
+	 * @param archivo (File) 
 	 */
-	public static List<String> readAllLines(String fileName) {
+	public static List<String> readAllLines(File archivo) {
 		try {
-			return Files.readAllLines(MisTools.getFilePath(fileName));			
+			return Files.readAllLines(archivo.toPath());			
 		
-		} catch (java.io.IOException F) {
+		} catch (IOException F) {
 			throw new RuntimeException(F.getMessage(), F);
 		} 
 		
-	}
-	
+	}	
+
 	/**
-	 * metodo con el que imprimimos el contenido de un archivo
+	 * metodo con el que reducimos el contenido de un archivo a una unica String
 	 * @author victor
-	 * @param fileName (String) nombre del archivo que queremos imprimir<br>(ejemplo: nombreArchivo.txt)
+	 * @param archivo (File) archivo que queremos imprimir
 	 * @return una unica String con el contenido legible del archivo
 	 * @throws CleanException
 	 * @see {@link #readAllLines(String)}
 	 */
-	public static String getAllLines(String fileName) {
-		String bigStr="";
-		for (String line : readAllLines(fileName))
-			bigStr += line+"\n";
+	public static String getAllLines(File archivo) {
+		String bar="";
+		for (String line : readAllLines(archivo))
+			bar += line+"\n";
 		
-		return bigStr;
+		return bar;
 	}
 
 	/**
 	 * @author victor
-	 * @param fileName (String) nombre del archivo. Ejemplo: diccionario.txt
+	 * @param archivo (File) archivo
 	 * @return String con el contenido de una linea aleatoria del archivo
-	 * @throws CleanException
-	 * @see {@link #readAllLines(String)}
+	 * @see {@link #readAllLines(File)}
 	 */
-	public static String getRandomLine(String fileName) {
-		List<String> file= readAllLines(fileName);
-		return file.get(new Random().nextInt(0, file.size()-1));	
+	public static String getRandomLine(File archivo) {
+		List<String> contenido= readAllLines(archivo);
+		return contenido.get(new Random().nextInt(0, contenido.size()-1));	
 	}	
 			
 	/**
-	 * @author victor
+	 * <b> para salir "!exit"</b><br>
 	 * mientras que el usuario no introduzca '!exit' el writer aceptara toda String que el usuario introduzca, 
 	 * añadiendo un salto de linea con cada input
+	 * @author victor
 	 * @param writer {@linkplain java.io.Writer Writer} que usaremos, incluye sus subclases (BufferedWriter, FileWriter, etc...)
 	 * @throws IOException
 	 */
-	public static void writerLoop(java.io.Writer writer) throws IOException {
+	public static void writerLoop(java.io.Writer writer) {
 		writerLoop(writer, new Scanner(System.in));
 	}
 	
 	/**
+	 * <b> para salir "!exit"</b><br>
 	 * mientras que el usuario no introduzca '!exit' el writer aceptara toda String que el usuario introduzca, 
 	 * añadiendo un salto de linea con cada input
 	 * @author victor
@@ -107,15 +107,20 @@ public class MisTools {
 	 * @param scanner (Scanner) a utilizar
 	 * @throws IOException
 	 */
-	public static void writerLoop(java.io.Writer writer, Scanner scanner) throws IOException {
-		while (true) {			
-			String line= scanner.nextLine();
+	public static void writerLoop(java.io.Writer writer, Scanner scanner) {
+		try 
+		{
+			while (true) 
+			{			
+				String line= scanner.nextLine();
+				if (line.equals("!exit")) 
+					break;
+				else				
+					writer.write(line+"\n");		
 			
-			if (line.equals("!exit")) 
-				break;
-			else				
-				writer.write(line+"\n");		
-		} 
+		}} catch (IOException F) {
+			throw new RuntimeException(F.getMessage(), F);
+		}
 	}
 	
 	/**
@@ -133,10 +138,10 @@ public class MisTools {
 	 */
 	public static String formatText(String text, boolean uppercase) {
 		if (uppercase)
-			return 	Normalizer.normalize(text.toUpperCase().trim(), 
+			return 	Normalizer.normalize(text.toUpperCase().trim() , 
 					Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
 		else
-			return	Normalizer.normalize(text.toLowerCase().trim(), 
+			return	Normalizer.normalize(text.toLowerCase().trim() , 
 					Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
 	}
 	
@@ -151,10 +156,10 @@ public class MisTools {
 	 * <br> - sin caracteres ascii no alfanumericos
 	 * @author victor
 	 * @param isUppercase (boolean) true si quieres que el resultado sea en mayusculas, false para minusuculas.
-	 * @param originalFilename (String) nombre del archivo que tomaremos como referencia. Ejemplo: diccionario.txt
+	 * @param originalFilename (File) archivo
 	 * @see #formatText(String, boolean)
 	 */
-	public static void CopyAndFormatFile(String originalFilename, boolean isUppercase) {
+	public static void CopyAndFormatFile(File originalFilename, boolean isUppercase) {
 		try 
 		{
 			List<String> archivo= readAllLines(originalFilename);
