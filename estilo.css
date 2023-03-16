@@ -1,0 +1,29 @@
+body{
+    padding: 10%;
+    color: white;
+    background-color: #3F3847;
+}
+
+#integrantes{
+    margin-top: -1%;
+    font-size: larger;
+}
+
+.divider {
+    margin-top: 4%;
+    margin-bottom: 4%;
+    width: 80%;
+    height: 2px;
+    background: white;
+}
+
+.caja {
+    line-height: 1.25;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    background-color: #383042;
+}
