@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>CustomException</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <pre>
+
+            package misTools;
+/**
+ * @author victor
+ * Excepcion generica definida por uno mismo.
+ */
+public class CustomException extends Exception &#10100;
+	
+	private static final long serialVersionUID = 34390014111499493L;
+	
+	public CustomException() &#10100;
+		super("Excepción Genérica. Probablemente haya saltado x fallo lógico.");
+    &#10101;
+	public CustomException(Throwable t) &#10100;
+		super(t);
+    &#10101;
+	public CustomException(String descripcion) &#10100;
+		super(descripcion);
+	&#10101;
+	public CustomException(String descripcion, Throwable t) &#10100;
+		super(descripcion, t);
+    &#10101;
+	public CustomException(String descripcion, Throwable t, boolean enableSuppression, boolean writableStackTrace) &#10100;
+		super(descripcion, t, enableSuppression, writableStackTrace);
+    &#10101;
+
+&#10101;
+
+
+        </pre>
+    </body>
+
+</html>

@@ -4,7 +4,7 @@ body{
     background-color: #3F3847;
 }
 
-#integrantes{
+#clases{
     margin-top: -1%;
     font-size: larger;
 }
@@ -26,4 +26,22 @@ body{
     border-width: 1px;
     border-color: white;
     background-color: #383042;
+}
+
+a {
+    color: inherit;
+}
+
+.hide {
+    display: none;
+  }
+  
+  .myDIV:hover + .hide {
+    display: block;
+    color: red;
+  }
+
+.test:hover + .hide {
+    display: block;
+    color: blue;
 }
