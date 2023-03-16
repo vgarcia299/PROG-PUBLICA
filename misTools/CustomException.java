@@ -23,6 +23,4 @@ public class CustomException extends Exception {
 		super(descripcion, t, enableSuppression, writableStackTrace);
 	}
 	
-	// Esto es un comentario de prueba!
-
 }
