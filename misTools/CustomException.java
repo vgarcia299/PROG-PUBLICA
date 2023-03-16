@@ -22,5 +22,7 @@ public class CustomException extends Exception {
 	public CustomException(String descripcion, Throwable t, boolean enableSuppression, boolean writableStackTrace) {
 		super(descripcion, t, enableSuppression, writableStackTrace);
 	}
+	
+	// Esto es un comentario de prueba!
 
 }
