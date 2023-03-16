@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class TresRaya_tablero {
 
-	private char blank;
 	private ArrayList<Character> fila1, fila2, fila3;
 	private ArrayList<ArrayList<Character>> board;
     
@@ -18,13 +17,12 @@ public class TresRaya_tablero {
     	board.add(fila3);
     	addBlanks();
     }
-    private void addBlanks() {
-    	blank='·';
-        fila1.add(blank); fila1.add(blank); fila1.add(blank); 
-        fila2.add(blank); fila2.add(blank); fila2.add(blank); 
-        fila3.add(blank); fila3.add(blank); fila3.add(blank); 
-    }
     
+    private void addBlanks() {
+        for (int i=0; i<3; i++) 
+        for (int j=0; j<3; j++)
+        	board.get(i).add('·');
+    }
     
     public boolean hasPiece(int i, int j) {
     	if (board.get(i).get(j) != '·')
@@ -45,7 +43,7 @@ public class TresRaya_tablero {
     	if (index<0)
         	throw new RuntimeException();	// la columna esta llena
     	else
-	    	if (board.get(index).get(col).equals(blank))
+	    	if (board.get(index).get(col).equals('·'))
 	    		return index;
 	    	else
 	    		return lastEmpty(col, index-1);
@@ -53,12 +51,12 @@ public class TresRaya_tablero {
     
     @Override
     public String toString() {
-    	String bar="";
+    	String foo="";
     	for (ArrayList<Character> row : board) {
-    		bar+="\n\t";
+    		foo+="\n\t";
     	for (char c : row)
-    		bar+=c+"  "; 	
-    	}return bar;
+    		foo+=c+"  "; 	
+    	}return foo;
     }
         
 }

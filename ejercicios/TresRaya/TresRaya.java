@@ -1,8 +1,8 @@
 package TresRaya;
 
 import java.util.ArrayList;
-import java.util.Scanner;		// https://github.com/vgarcia299/PROG-PUBLICA/blob/main/misTools/SafeInput.java		(usado en ForceChoice)
-import misTools.ForceChoice;	// https://github.com/vgarcia299/PROG-PUBLICA/blob/main/misTools/ForceChoice.java
+import java.util.Scanner;
+import misTools.ForceChoice;	// https://vgarcia299.github.io/PROG-PUBLICA/documentation/ForceChoice.html
 								
 public class TresRaya {
 
