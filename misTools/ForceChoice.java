@@ -6,13 +6,22 @@ package misTools;
  * <hr> @metodos </b>
  * {@linkplain #Boolean					(java.util.Scanner, boolean)				Boolean()				}, 
  * {@linkplain #Character				(java.util.Scanner, String)					Character()				},
+ * {@linkplain #Character				(java.util.Scanner, char, char...)			Character()				},
+ * {@linkplain #Character				(java.util.Scanner, char[])					Character()				},
  * {@linkplain #String	 				(java.util.Scanner, String, String...)		String()				}, 
+ * {@linkplain #String	 				(java.util.Scanner, String[])				String()				}, 
  * {@linkplain #String_case_sensitive	(java.util.Scanner, String, String...)		String_case_sensitive()	}, 
+ * {@linkplain #String_case_sensitive	(java.util.Scanner, String[])				String_case_sensitive()	}, 
  * {@linkplain #Byte					(java.util.Scanner, byte, byte...) 			Byte()					}, 
+ * {@linkplain #Byte					(java.util.Scanner, byte[]) 				Byte()					}, 
  * {@linkplain #Integer	 				(java.util.Scanner, int, int...) 			Integer()				}, 
+ * {@linkplain #Integer	 				(java.util.Scanner, int[]) 					Integer()				}, 
  * {@linkplain #Double	 				(java.util.Scanner, double, double...) 		Double()				}, 
+ * {@linkplain #Double	 				(java.util.Scanner, double[]) 				Double()				}, 
  * {@linkplain #Long	 				(java.util.Scanner, long, long...) 			Long()					},
- * {@linkplain #Float	 				(java.util.Scanner, float, float...)		Float()					}
+ * {@linkplain #Long	 				(java.util.Scanner, long[]) 				Long()					},
+ * {@linkplain #Float	 				(java.util.Scanner, float, float...)		Float()					}, 
+ * {@linkplain #Float	 				(java.util.Scanner, float[])				Float()					}
  * <br><br>
  * @see {@linkplain SafeInput}
  */
@@ -38,7 +47,31 @@ public class ForceChoice {
 			return Boolean(scanner, forcedBoolean); 
 		}		
 	}
-
+	
+	/**
+	 * Método recursivo que, además de funcionar como SafeInput, solo acepta un valor que haya sido introducido por parámetros.
+	 * @param scanner		Scanner con el que queremos introducir el dato.
+	 * @param forcedChars	posibles char que forzaremos a elegir.
+	 * @return char introducido por el usuario.
+	 * @see SafeInput#Character(java.util.Scanner)
+	 */
+	public static char Character(java.util.Scanner scanner, char forcedChar, char...forcedChars) {
+		String aux=new String(forcedChars);
+		aux+= forcedChar;
+		return Character(scanner, aux);
+	}
+	
+	/**
+	 * Método recursivo que, además de funcionar como SafeInput, solo acepta un valor que haya sido introducido por parámetros.
+	 * @param scanner		Scanner con el que queremos introducir el dato.
+	 * @param forcedChars	posibles char que forzaremos a elegir.
+	 * @return char introducido por el usuario.
+	 * @see SafeInput#Character(java.util.Scanner)
+	 */
+	public static char Character(java.util.Scanner scanner, char[] forcedChars) {
+		return Character(scanner, new String(forcedChars));
+	}
+	
 	/**
 	 * Método recursivo que, además de funcionar como SafeInput, solo acepta un valor que haya sido introducido por parámetros.
 	 * @param scanner		Scanner con el que queremos introducir el dato.
@@ -61,6 +94,17 @@ public class ForceChoice {
 		}		
 	}
 
+	/**
+	 * Método recursivo que, además de funcionar como SafeInput, solo acepta un valor que haya sido introducido por parámetros.
+	 * @param scanner		Scanner con el que queremos introducir el dato.
+	 * @param forcedStrings	posibles String que forzaremos a elegir.
+	 * @return String introducido por el usuario.
+	 * @see SafeInput#String(java.util.Scanner)
+	 */
+	public static String String(java.util.Scanner scanner, String[] forcedStrings) {
+		return String(scanner, forcedStrings[0], forcedStrings);
+	}
+	
 	/**
 	 * Método recursivo que, además de funcionar como SafeInput, solo acepta un valor que haya sido introducido por parámetros.
 	 * @apiNote no es case-sensitive
@@ -88,7 +132,18 @@ public class ForceChoice {
 			return String(scanner, forcedStr1, forcedStrs); 
 		}		
 	}
-
+	
+	/**
+	 * Método recursivo que, además de funcionar como SafeInput, solo acepta un valor que haya sido introducido por parámetros.
+	 * @param scanner		Scanner con el que queremos introducir el dato.
+	 * @param forcedStrings	posibles String que forzaremos a elegir.
+	 * @return String introducido por el usuario.
+	 * @see SafeInput#String(java.util.Scanner)
+	 */
+	public static String String_case_sensitive(java.util.Scanner scanner, String[] forcedStrings) {
+		return String_case_sensitive(scanner, forcedStrings[0], forcedStrings);
+	}
+	
 	/**
 	 * Método recursivo que, además de funcionar como SafeInput, solo acepta un valor que haya sido introducido por parámetros.
 	 * @apiNote es case-sensitive
@@ -120,6 +175,17 @@ public class ForceChoice {
 	/**
 	 * Método recursivo que, además de funcionar como SafeInput, solo acepta un valor que haya sido introducido por parámetros.
 	 * @param scanner		Scanner con el que queremos introducir el dato.
+	 * @param forcedBytes	posibles byte que forzaremos a elegir.
+	 * @return byte introducido por el usuario.
+	 * @see SafeInput#Byte(java.util.Scanner)
+	 */
+	public static byte Byte(java.util.Scanner scanner, byte[] forcedBytes) {
+		return Byte(scanner, forcedBytes[0], forcedBytes);
+	}
+	
+	/**
+	 * Método recursivo que, además de funcionar como SafeInput, solo acepta un valor que haya sido introducido por parámetros.
+	 * @param scanner		Scanner con el que queremos introducir el dato.
 	 * @param forcedByte1	byte que forzaremos a que introduzca el usuario.
 	 * @param forcedBytes	bytes adicionales que tambien acepta el método.
 	 * @return byte introducido por el usuario.
@@ -141,6 +207,17 @@ public class ForceChoice {
 			System.err.print("caught CustomException... inténtalo de nuevo: ");
 			return Byte(scanner, forcedByte1, forcedBytes); 
 		}		
+	}
+	
+	/**
+	 * Método recursivo que, además de funcionar como SafeInput, solo acepta un valor que haya sido introducido por parámetros.
+	 * @param scanner		Scanner con el que queremos introducir el dato.
+	 * @param forcedInts	posibles int que forzaremos a elegir.
+	 * @return int introducido por el usuario.
+	 * @see SafeInput#Integer(java.util.Scanner)
+	 */
+	public static int Integer(java.util.Scanner scanner, int[]forcedInts) {
+		return Integer(scanner, forcedInts[0], forcedInts);
 	}
 	
 	/**
@@ -173,6 +250,17 @@ public class ForceChoice {
 	/**
 	 * Método recursivo que, además de funcionar como SafeInput, solo acepta un valor que haya sido introducido por parámetros.
 	 * @param scanner		Scanner con el que queremos introducir el dato.
+	 * @param forcedDoubles	posibles double que forzaremos a elegir.
+	 * @return double introducido por el usuario.
+	 * @see SafeInput#Double(java.util.Scanner)
+	 */
+	public static double Double(java.util.Scanner scanner, double[] forcedDoubles) {
+		return Double(scanner, forcedDoubles[0], forcedDoubles);
+	}
+	
+	/**
+	 * Método recursivo que, además de funcionar como SafeInput, solo acepta un valor que haya sido introducido por parámetros.
+	 * @param scanner		Scanner con el que queremos introducir el dato.
 	 * @param forcedDouble1	double que forzaremos a que introduzca el usuario.
 	 * @param forcedDoubles	doubles adicionales que tambien acepta el método.
 	 * @return double introducido por el usuario.
@@ -194,6 +282,17 @@ public class ForceChoice {
 			System.err.print("caught CustomException... inténtalo de nuevo: ");
 			return Double(scanner, forcedDouble1, forcedDoubles); 
 		}		
+	}
+	
+	/**
+	 * Método recursivo que, además de funcionar como SafeInput, solo acepta un valor que haya sido introducido por parámetros.
+	 * @param scanner		Scanner con el que queremos introducir el dato.
+	 * @param forcedLongs	posibles long que forzaremos a elegir.
+	 * @return long introducido por el usuario.
+	 * @see SafeInput#Long(java.util.Scanner)
+	 */
+	public static long Long(java.util.Scanner scanner, long[] forcedLongs) {
+		return Long(scanner, forcedLongs[0], forcedLongs);
 	}
 	
 	/**
@@ -225,6 +324,17 @@ public class ForceChoice {
 	/**
 	 * Método recursivo que, además de funcionar como SafeInput, solo acepta un valor que haya sido introducido por parámetros.
 	 * @param scanner		Scanner con el que queremos introducir el dato.
+	 * @param forcedFloats	posibles float que forzaremos a elegir.
+	 * @return float introducido por el usuario.
+	 * @see SafeInput#Float(java.util.Scanner)
+	 */
+	public static float Float(java.util.Scanner scanner, float[] forcedFloats) {
+		return Float(scanner, forcedFloats[0], forcedFloats);
+	}
+	
+	/**
+	 * Método recursivo que, además de funcionar como SafeInput, solo acepta un valor que haya sido introducido por parámetros.
+	 * @param scanner		Scanner con el que queremos introducir el dato.
 	 * @param forcedFloat	float que forzaremos a que introduzca el usuario.
 	 * @param forcedFloats	floats adicionales que tambien acepta el método.
 	 * @return float introducido por el usuario.
@@ -246,6 +356,7 @@ public class ForceChoice {
 			System.err.print("caught CustomException... inténtalo de nuevo: ");
 			return Float(scanner, forcedFloat, forcedFloats); 
 		}		
+		
 	}
 	
 }
