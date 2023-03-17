@@ -80,7 +80,7 @@ public class TresRaya {
 //	fin si tres consecutivas
 	private static boolean checkVertical() {
         for (int i=0; i<3; i++)            	
-            if (board.hasPiece(0,0) &&
+            if (board.hasPiece(0,i) &&
         		board.getTablero().get(0).get(i) == board.getTablero().get(1).get(i) &&         	
         		board.getTablero().get(1).get(i) == board.getTablero().get(2).get(i))
         		return true;  // early r = fin   
@@ -91,30 +91,20 @@ public class TresRaya {
 	
 //	fin juego si true
 	private static boolean checkDiagonal() {
-		if (checkDiagonal1()||checkDiagonal2())
+		if (diagonal_aux(0,2,2,0)||diagonal_aux(0,0,2,2))
 			return true;
 		else
 			return false;
 	}
 	
-//	Diagonal desde esquina superior izquierda a inferior derecha.
-	private static boolean checkDiagonal1() {
-		if (board.hasPiece(0,0) &&
-        	board.getTablero().get(0).get(0) == board.getTablero().get(1).get(1) && 
-        	board.getTablero().get(1).get(1) == board.getTablero().get(2).get(2))
-    		return true;
-		else
-			return false;
-	}
 	
-//	Diagonal desde esquina superior derecha a inferior izquierda.
-	private static boolean checkDiagonal2() {
-        if (board.hasPiece(0,0) &&
-            board.getTablero().get(0).get(2) == board.getTablero().get(1).get(1) && 
-            board.getTablero().get(1).get(1) == board.getTablero().get(2).get(0))
-            return true;                      
-		else
-			return false;
-	}	
+	private static boolean diagonal_aux(int x0, int y0,int x2, int y2) {
+        if (board.hasPiece(0,y0) &&
+            board.getTablero().get(x0).get(y0) == board.getTablero().get(1).get(1) && 
+        	board.getTablero().get(x2).get(y2) == board.getTablero().get(1).get(1))
+                return true;                      
+    		else
+    			return false;
+	}
 	
 }
