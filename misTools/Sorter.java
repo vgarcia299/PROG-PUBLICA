@@ -16,6 +16,11 @@ public class Sorter {
 		quicksort(nums, 0, nums.length-1);
 	}
 	
+	public static int[] getSortedArray(int...nums) {
+		quicksort(nums);
+		return nums;
+	}
+	
 	private static void quicksort (int[] arr, int suelo, int techo) 
 	{		
 		if (suelo >= techo)
