@@ -1,4 +1,12 @@
 
+.juver {
+    display: none;
+}
+
+#juver1 + .juver:hover {
+    display: block;
+    color: red;    
+}
 
 body{
     padding-top: 3%;
