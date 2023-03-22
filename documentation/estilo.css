@@ -3,6 +3,16 @@
   max-width: 90%;
 }
 
+::selection {
+    color: #202020;
+    background: gray;
+}
+
+::-moz-selection {
+    color: #202020;
+    background: gray;
+}
+
 .juver {
     display: none;
 }
