@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"TresRaya","l":"TresRaya"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"TresRaya","l":"HeurCelda"},{"p":"TresRaya","l":"Humano"},{"p":"TresRaya","l":"Jugador"},{"p":"TresRaya","l":"mains"},{"p":"TresRaya","l":"Skynet"},{"p":"TresRaya","l":"TresRaya"},{"p":"TresRaya","l":"TresRaya_tablero"},{"p":"TresRaya","l":"TresRayaCelda"}];updateSearchResults();
