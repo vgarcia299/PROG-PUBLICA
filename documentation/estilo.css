@@ -79,7 +79,7 @@ a:hover{
   width: 13%; 
   position: fixed; 
   margin-left: 72%;
-  top: 21%; 
+  top: 28%; 
   background-color:#202020;
   border-style: solid; 
   border-color: #181818; 
@@ -102,4 +102,21 @@ a:hover{
 .indice li:before { 
   content: counters(item, ".") ". "; 
   counter-increment: item 
+}
+
+.menu {
+    width: 16%; 
+    position: fixed; 
+    margin-left: 72%;
+    top: 21%; 
+    background-color:#202020;
+    border-style: solid; 
+    border-color: #181818; 
+    border-width: 2px; 
+    border-radius: 10px; 
+    color: #c5c8c6;
+    font-weight: 550;
+    font-size: smaller;
+    line-height: 1.75; 
+    text-align: center; 
 }
