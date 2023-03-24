@@ -96,10 +96,11 @@ a:hover{
 }
 
 .indice {
-  width: 13%; 
+  width: 13.5%; 
   position: fixed; 
   margin-left: 72%;
-  top: 28%; 
+  top: 15%; 
+  height: 40%;
   background-color:#202020;
   border-style: solid; 
   border-color: #181818; 
@@ -109,10 +110,10 @@ a:hover{
   font-weight: 550;
   font-size: smaller;
   line-height: 1.75;
+  max-height: 40%;
   overflow: auto;
-  max-height: 70%;
   scrollbar-width: none;
-  -ms-overflow-style: none;
+  -ms-overflow-style: none;  
 }
 
 .indice, ol{
@@ -129,12 +130,13 @@ a:hover{
 }
 
 .indice::-webkit-scrollbar { width: 0px; height: 3px;}
+.indicev2::-webkit-scrollbar { width: 0px; height: 3px;}
 
 .menu {
     width: 16%; 
     position: fixed; 
     margin-left: 72%;
-    top: 21%; 
+    top: 5%; 
     background-color:#202020;
     border-style: solid; 
     border-color: #181818; 
@@ -147,12 +149,29 @@ a:hover{
     text-align: center; 
 }
 
-.indicev2 {
+.indicev2 {  
+    width: 16%; 
+    position: fixed; 
+    margin-left: 72%;
+    top: 59%; 
+    background-color:#202020;
+    border-style: solid; 
+    border-color: #181818; 
+    border-width: 2px; 
+    border-radius: 10px; 
     color: #c5c8c6;
     font-weight: 550;
     font-size: smaller;
-    margin-left: auto;
-    margin-right: auto;
+    line-height: 1.75;
+    max-height: 39%;
+    height: 39%;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;  
+}
+
+details {
+    margin-left: 3%;
 }
 
   
