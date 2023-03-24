@@ -22,6 +22,8 @@
 ::-webkit-scrollbar-corner { background-color: #646464;}
 ::-webkit-resizer { background-color: #666;}
 
+
+
 html {
     scrollbar-face-color: #646464;
     scrollbar-base-color: #646464;
@@ -129,8 +131,10 @@ a:hover{
   counter-increment: item 
 }
 
-.indice::-webkit-scrollbar { width: 0px; height: 3px;}
-.indicev2::-webkit-scrollbar { width: 0px; height: 3px;}
+.indice::-webkit-scrollbar { 
+    width: 0px; 
+    height: 3px;
+}
 
 .menu {
     width: 16%; 
@@ -170,13 +174,43 @@ a:hover{
     -ms-overflow-style: none;  
 }
 
+.indicev2::-webkit-scrollbar {
+    width: 0px; 
+    height: 3px;
+}
+
 details {
     margin-left: 3%;
 }
 
   
-  .indicev2 li:before { 
+.indicev2 li:before { 
     content: none;
-  }
+}
   
-  
+.gist-file {
+    max-height: 100vh;
+    direction: rtl;
+    overflow: auto;
+    scrollbar-width: 1;
+}
+
+.gist-data {
+    direction: ltr;
+}
+
+.gist-file::-webkit-scrollbar {
+    width: 4px; 
+    height: 1px;
+}
+
+.gist-file::-webkit-scrollbar-thumb { 
+    background-color: #191919;
+    
+}
+
+.gist-file::-webkit-scrollbar-button { 
+    background-color: #191919;
+    border-radius: 10px;
+}
+
