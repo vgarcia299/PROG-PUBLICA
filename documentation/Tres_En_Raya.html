@@ -14,20 +14,121 @@
         </div>
 
         <ol class="indice">
-             <li><a class="enlace" href="#file-jugador_base-java">     Jugador    </a></li>
-            <ol>
-            <li><a class="enlace" href="#file-jugador_humano-java">       Humano     </a></li>
+            <li><a class="enlace" href="#file-jugador_base-java">     Jugador    </a></li>
+           <ol>
+           <li><a class="enlace" href="#file-jugador_humano-java">       Humano     </a></li>
+           
+           <li><a class="enlace" href="#file-jugador_ia_1-java">           IA         </a></li>
+               <ol>
+               <li><a class="enlace" href="#file-jugador_ia_2-java">   Heurística  </a></li>
+               </ol></ol>
+           <li><a class="enlace" href="#file-tresraya_1-java">        Casilla    </a></li>
+           
+           <li><a class="enlace" href="#file-tresraya_2-java">      Tablero    </a></li>
+           
+           <li><a class="enlace" href="#file-tresraya_3-java">        Juego      </a></li>
+
+
+        <div class="indicev2">
+            <br>
+            Métodos:
+            <details>
+                <summary> <a class="enlace" href="#file-jugador_base-java">     Jugador    </a></summary>
+                    <ol>
+                        <li><a class="enlace" href="#file-jugador_base-java-LC35"><i>setOponente</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_base-java-LC42"><i>getPieza</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_base-java-LC51"><i>colocarPieza</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_base-java-LC67"><i>turno</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_base-java-LC74"><i>eliminarHeur</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_base-java-LC81"><i>alterarHeur</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_base-java-LC86"><i>printUI</i></a></li>
+                    </ol>
+            </details>
+
+
+            <details>
+                <summary> <a class="enlace" href="#file-jugador_humano-java">       Humano     </a></summary>
+                    <ol>
+                        <li><a class="enlace" href="#file-jugador_humano-java-LC28"><i>turno</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_humano-java-LC43"><i>pedirDato</i></a></li>
+                    </ol>
+            </details>
             
-            <li><a class="enlace" href="#file-jugador_ia_1-java">           IA         </a></li>
-                <ol>
-                <li><a class="enlace" href="#file-jugador_ia_2-java">   Heurística  </a></li>
-                </ol></ol>
-            <li><a class="enlace" href="#file-tresraya_1-java">        Casilla    </a></li>
+
+            <details>
+                <summary><a class="enlace" href="#file-jugador_ia_1-java">           IA         </a></summary>
+                    <ol>
+                        <li><a class="enlace" href="#file-jugador_ia_1-java-LC51"><i>decidirCasillaIA</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_1-java-LC75"><i>turno</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_1-java-LC91"><i>alterarHeur</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_1-java-LC102"><i>checkDiagonales</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_1-java-LC146"><i>isLockX</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_1-java-LC155"><i>isLockY</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_1-java-LC164"><i>isLockZ</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_1-java-LC169"><i>eliminarHeur</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_1-java-LC178"><i>restarHeur</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_1-java-LC187"><i>alterHorizontal</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_1-java-LC208"><i>alterVertical</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_1-java-LC229"><i>alterDiagonal</i></a></li>
+                    </ol>
+            </details>
             
-            <li><a class="enlace" href="#file-tresraya_2-java">      Tablero    </a></li>
+
+            <details>
+                <summary> <a class="enlace" href="#file-jugador_ia_2-java">   Heurística  </a></summary>
+                    <ol>
+                        <li><a class="enlace" href="#file-jugador_ia_2-java-LC23"><i>isLockedX</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_2-java-LC29"><i>isLockedY</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_2-java-LC35"><i>isLockedZ</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_2-java-LC41"><i>XLock</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_2-java-LC47"><i>YLock</i></a></li>
+                        <li><a class="enlace" href="#file-jugador_ia_2-java-LC53"><i>ZLock</i></a></li>
+                    </ol>
+            </details>
+               
+           
+            <details>
+                <summary><a class="enlace" href="#file-tresraya_1-java">        Casilla    </a></summary>
+                    <ol>
+                        <li><a class="enlace" href="#file-tresraya_1-java-LC18"><i>setCoord</i></a></li>
+                        <li><a class="enlace" href="#file-tresraya_1-java-LC26"><i>getCol</i></a></li>
+                        <li><a class="enlace" href="#file-tresraya_1-java-LC29"><i>getRow</i></a></li>
+                        <li><a class="enlace" href="#file-tresraya_1-java-LC32"><i>getValue</i></a></li>
+                        <li><a class="enlace" href="#file-tresraya_1-java-LC38"><i>isOcupado</i></a></li>
+                        <li><a class="enlace" href="#file-tresraya_1-java-LC41"><i>ocupar</i></a></li>
+                    </ol>
+            </details>
             
-            <li><a class="enlace" href="#file-tresraya_3-java">        Juego      </a></li>
-        </ol>
+            
+            <details>
+                <summary><a class="enlace" href="#file-tresraya_2-java">      Tablero    </a></summary>
+                    <ol>
+                        <li><a class="enlace" href="#file-tresraya_2-java-LC26"><i>getCelda</i></a></li>
+                        <li><a class="enlace" href="#file-tresraya_2-java-LC30"><i>getTablero</i></a></li>
+                        <li><a class="enlace" href="#file-tresraya_2-java-LC34"><i>hasPiece</i></a></li>
+                        <li><a class="enlace" href="#file-tresraya_2-java-LC41"><i>placePiece</i></a></li>
+
+                    </ol>
+            </details>
+            
+
+            <details>
+                <summary> <a class="enlace" href="#file-tresraya_3-java">        Juego      </a></summary>
+                        <ol>
+                            <li><a class="enlace" href="#file-tresraya_3-java-LC39"><i>getTablero</i></a></li>
+                            <li><a class="enlace" href="#file-tresraya_3-java-LC44"><i>continuar</i></a></li>
+                            <li><a class="enlace" href="#file-tresraya_3-java-LC49"><i>jugar</i></a></li>
+                            <li><a class="enlace" href="#file-tresraya_3-java-LC61"><i>printWinner</i></a></li>
+                            <li><a class="enlace" href="#file-tresraya_3-java-LC69"><i>checkSinEspacio</i></a></li>
+                            <li><a class="enlace" href="#file-tresraya_3-java-LC80"><i>checkHorizontal</i></a></li>
+                            <li><a class="enlace" href="#file-tresraya_3-java-LC90"><i>checkVertical</i></a></li>
+                            <li><a class="enlace" href="#file-tresraya_3-java-LC102"><i>checkDiagonal</i></a></li>
+                            <li><a class="enlace" href="#file-tresraya_3-java-LC107"><i>diagonal_aux</i></a></li>
+                        </ol>
+            </details>
+            <br>
+        </div>
+    </ol>
 
 
         <h2 id="jugador">Tres En Raya</h2>

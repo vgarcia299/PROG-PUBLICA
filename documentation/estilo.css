@@ -14,6 +14,26 @@
     background: gray;
 }
 
+::-webkit-scrollbar { width: 10px; height: 5px;}
+::-webkit-scrollbar-button {  background-color: #282828; }
+::-webkit-scrollbar-track {  background-color: #646464;}
+::-webkit-scrollbar-track-piece { background-color: #282828;}
+::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 10px;}
+::-webkit-scrollbar-corner { background-color: #646464;}
+::-webkit-resizer { background-color: #666;}
+
+html {
+    scrollbar-face-color: #646464;
+    scrollbar-base-color: #646464;
+    scrollbar-3dlight-color: #646464;
+    scrollbar-highlight-color: #646464;
+    scrollbar-track-color: #000;
+    scrollbar-arrow-color: #000;
+    scrollbar-shadow-color: #646464;
+/*  scrollbar-dark-shadow-color: #646464; */
+  }
+  
+
 body{
     padding-top: 3%;
     padding-right: 10%;
@@ -89,6 +109,10 @@ a:hover{
   font-weight: 550;
   font-size: smaller;
   line-height: 1.75;
+  overflow: auto;
+  max-height: 70%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .indice, ol{
@@ -103,6 +127,8 @@ a:hover{
   content: counters(item, ".") ". "; 
   counter-increment: item 
 }
+
+.indice::-webkit-scrollbar { width: 0px; height: 3px;}
 
 .menu {
     width: 16%; 
@@ -120,3 +146,18 @@ a:hover{
     line-height: 1.75; 
     text-align: center; 
 }
+
+.indicev2 {
+    color: #c5c8c6;
+    font-weight: 550;
+    font-size: smaller;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+  
+  .indicev2 li:before { 
+    content: none;
+  }
+  
+  
