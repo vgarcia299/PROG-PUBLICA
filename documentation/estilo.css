@@ -23,6 +23,17 @@
 ::-webkit-resizer { background-color: #666;}
 
 
+.icon {
+    width: 2vw;
+    margin-top: 1%; 
+    margin-bottom: -1%;
+    margin-left: 15%; 
+}
+
+.icon:hover{
+    opacity: 0.7;
+}
+
 
 html {
     scrollbar-face-color: #646464;
