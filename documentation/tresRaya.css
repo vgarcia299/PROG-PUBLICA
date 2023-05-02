@@ -1,0 +1,84 @@
+.goog-te-banner-frame.skiptranslate 
+{
+    display: none !important;
+} 
+
+/*          Background-Images del body         */
+body.fondo1  {background-image: url(https://i.redd.it/sb5u3ukyg1b81.gif);}
+body.fondo2  {background-image: url(https://i.pinimg.com/originals/6b/71/e0/6b71e0c74e6b42f53de0cefb7884f704.gif);}
+body.fondo3  {background-image: url(https://i.pinimg.com/originals/b3/9c/0c/b39c0c466fa2e880bcf8b904305041aa.gif);}
+body.fondo4  {background-image: url(https://i.redd.it/q3z1k0zc7umy.gif);}
+body.fondo5  {background-image: url(https://i.redd.it/2l8aizr9pa211.gif);}
+body.fondo6  {background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/09a8a995542379.5e99bdaba5c64.gif);}
+body.fondo7  {background-image: url(https://i.redd.it/79t6c6hpsc7y.gif);}
+body.fondo8  {background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6fe91322-e36d-4aca-8d83-41904f9e429f/df3vtz6-07675b99-dcad-44aa-90f5-527b4b781339.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzZmZTkxMzIyLWUzNmQtNGFjYS04ZDgzLTQxOTA0ZjllNDI5ZlwvZGYzdnR6Ni0wNzY3NWI5OS1kY2FkLTQ0YWEtOTBmNS01MjdiNGI3ODEzMzkuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.DxpyPs1xMoA-_tE7cWgR1TxJuEQAxjNXjUt_-PHfOz4);}
+body.fondo9  {background-image: url(https://wallpapercave.com/wp/wp9389607.gif);}
+body.fondo10 {background-image: url(https://pro2-bar-s3-cdn-cf6.myportfolio.com/3aacf725-f29c-48df-9da0-795288bfeab5/7968b416-e19e-4a13-960b-458f1ec56345_rwc_0x0x1920x1080x1920.gif?h=ca40a3bbd358a952c9df1810f033b750);}
+body.fondo11 {background-image: url(https://rare-gallery.com/uploads/posts/547224-landscape-wallpaper.gif);}
+
+
+body
+{
+    filter: opacity(0.85);
+    max-height: 1080;
+    user-select: none;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+
+table
+{
+    margin: auto;
+    margin-top: 160px;
+    margin-bottom: 150px;
+}
+
+
+button
+{
+    width: 125px;
+    height: 125px;
+    border: 0px;
+    font-size: x-large;
+    border-radius: 5px;
+}
+
+
+.unmarked
+{
+    color: lightgrey;
+    background-color: lightgrey;
+}
+
+
+.cruz
+{
+    background-color: lightblue;
+}
+
+
+.cara
+{
+    background-color: lightcoral;
+}
+
+
+#winnerMessage
+{
+    color: white;
+    font-size: large;
+}
+
+
+#replay
+{
+    color: white;
+    margin: auto;
+    width: 500px;
+    height: min-content;
+    background: none;
+    visibility: hidden;
+}
