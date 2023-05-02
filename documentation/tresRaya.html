@@ -1,0 +1,40 @@
+<!DOCTYPE html> <!-- las ids de todos los elementos estan linkadas en el js -->
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+        <title> Tres en Raya Victor</title>
+        <link rel="stylesheet" href="tresRaya.css">
+        <script src="tresRaya_funciones.js"></script>
+    </head>
+
+    <body id="body" onload="contarRecargas(); setFondo();">
+
+        <table id="tablero">
+
+            <tr>
+                <td><button id="11" class="unmarked" onclick="turno(id)">·</button></td>
+                <td><button id="21" class="unmarked" onclick="turno(id)">·</button></td>
+                <td><button id="31" class="unmarked" onclick="turno(id)">·</button></td>
+            </tr>
+
+            <tr>
+                <td><button id="12" class="unmarked" onclick="turno(id)">·</button></td>
+                <td><button id="22" class="unmarked" onclick="turno(id)">·</button></td>
+                <td><button id="32" class="unmarked" onclick="turno(id)">·</button></td>
+            </tr>
+
+            <tr>
+                <td><button id="13" class="unmarked" onclick="turno(id)">·</button></td>
+                <td><button id="23" class="unmarked" onclick="turno(id)">·</button></td>
+                <td><button id="33" class="unmarked" onclick="turno(id)">·</button></td>
+            </tr>
+
+        </table>
+
+        <div id="winnerMessage"></div>
+        <button id="replay" onClick="window.location.reload();"> Jugar de nuevo </button>
+        
+    </body>
+
+</html>
